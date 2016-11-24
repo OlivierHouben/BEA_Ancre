@@ -30,7 +30,9 @@
 
 /* System tick 32 bit variable defined by the platform */
 extern __IO unsigned long time32_incr;
+
 int instanceMode = 0; // 1 = TAG , 0 = ANCHOR
+
 
 int No_Configuration(void)
 {
@@ -198,7 +200,7 @@ ITStatus EXTI_GetITEnStatus(uint32_t EXTI_Line)
   return bitstatus;
 }
 
-int RCC_Configuration(void)
+int RCC_Configuration( bool instanceMode)
 {
 	RCC_ClocksTypeDef RCC_ClockFreq;
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
@@ -221,8 +223,10 @@ int RCC_Configuration(void)
     	/* Enable MSI */
     	RCC_MSICmd(ENABLE);
 
+
     	/* Choix de la valeur de MSI 65 kHz car max 128 KHz en LowPowerRun*/
     	RCC_MSIRangeConfig(RCC_MSIRange_0);
+
 
     	/* Enable Prefetch Buffer */
     	FLASH_PrefetchBufferCmd(ENABLE);
@@ -268,11 +272,11 @@ int RCC_Configuration(void)
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
 
 		/* Enable GPIOs clocks */
-		RCC_AHBPeriphClockCmd(
-						RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |
-						RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |
-						RCC_AHBPeriph_GPIOE,	ENABLE);
+		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |
+				RCC_AHBPeriph_GPIOE,ENABLE);
+
 		RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+		 RCC_APB1PeriphClockCmd(RCC_APB1Periph_COMP | RCC_APB1Periph_LCD | RCC_APB1Periph_PWR,ENABLE);
     }
 
     else
@@ -328,6 +332,7 @@ int RCC_Configuration(void)
     						RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |
     						RCC_AHBPeriph_GPIOE,	ENABLE);
     	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+    	 RCC_APB1PeriphClockCmd(RCC_APB1Periph_COMP | RCC_APB1Periph_LCD | RCC_APB1Periph_PWR,ENABLE);
 	}
 
 	return 0;
@@ -436,20 +441,28 @@ int SPI_Configuration(void)
 
 	SPI_Init(SPIx, &SPI_InitStructure);
 
-	// SPIx SCK and MOSI pin setup
-	GPIO_InitStructure.GPIO_Pin = SPIx_SCK | SPIx_MOSI;
+	// SPIx SCK pin setup
+	GPIO_InitStructure.GPIO_Pin = SPIx_SCK;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
 
-	GPIO_Init(SPIx_GPIO, &GPIO_InitStructure);
+	GPIO_Init(SPIx_SCK_GPIO, &GPIO_InitStructure);
+
+	// SPIx MOSI pin setup
+	GPIO_InitStructure.GPIO_Pin = SPIx_MOSI;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+
+	GPIO_Init(SPIx_MOSI_GPIO, &GPIO_InitStructure);
 
 	// SPIx MISO pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_MISO;
 	//GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
 
-	GPIO_Init(SPIx_GPIO, &GPIO_InitStructure);
+	GPIO_Init(SPIx_MISO_GPIO, &GPIO_InitStructure);
 
 	// SPIx CS pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_CS;
@@ -552,27 +565,45 @@ int GPIO_Configuration(void)
 	* immunity against EMI/EMC */
 
 	// Enable GPIOs clocks
-	RCC_AHBPeriphClockCmd(
-						RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |
-						RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |
-						RCC_AHBPeriph_GPIOE,ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |RCC_AHBPeriph_GPIOE,ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
 
-/*	// Set all GPIO pins as analog inputs
+	// Set all GPIO pins as analog inputs
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 	GPIO_Init(GPIOD, &GPIO_InitStructure);
-	GPIO_Init(GPIOE, &GPIO_InitStructure); */
+
+	GPIO_Init(GPIOE, &GPIO_InitStructure);
+
+
+/*
+	//Enable GPIO used for User button
+	GPIO_InitStructure.GPIO_Pin = TA_BOOT1;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(TA_BOOT1_GPIO, &GPIO_InitStructure);
+
+	//Enable GPIO used for Response Delay setting
+	GPIO_InitStructure.GPIO_Pin = TA_RESP_DLY | TA_SW1_3 | TA_SW1_4 | TA_SW1_5 | TA_SW1_6 | TA_SW1_7 | TA_SW1_8;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(TA_RESP_DLY_GPIO, &GPIO_InitStructure);
+
+	//Enable GPIO used for SW1 switch setting
+	GPIO_InitStructure.GPIO_Pin = TA_SW1_3 | TA_SW1_4 | TA_SW1_5 | TA_SW1_6 | TA_SW1_7 | TA_SW1_8;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(TA_SW1_GPIO, &GPIO_InitStructure);
+	*/
+
+
 
 
 	// Enable GPIO used for LEDs
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 //	GPIO_PinAFConfig(GPIO_AF_SPI1, DISABLE);//GPIO_PinRemapConfig(GPIO_Remap_SPI1, DISABLE); C'est cette fonction qu'il faut analyser
 
@@ -581,7 +612,7 @@ int GPIO_Configuration(void)
 	// Enable GPIO used to command the relay, commanding the door PB8
 	GPIO_InitStructure.GPIO_Pin = DOOR_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
 	GPIO_Init(DOOR_GPIO, &GPIO_InitStructure);
 
 	// Enable GPIO used to register new tags
@@ -594,6 +625,9 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
 
+	// Disable GPIOs clocks
+	//RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |RCC_AHBPeriph_GPIOE,DISABLE);
+
     return 0;
 }
 
@@ -603,12 +637,12 @@ void ADC_Configuration(void)
 	GPIO_InitTypeDef GPIO_InitStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
 
-	// Configure PB.1 (ADC1 Channel9)
+	// Configure PC.0 (ADC1 Channel10)
 
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-	GPIO_Init(GPIOC, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Pin = POT_GPIO_PIN;
+	GPIO_Init(POT_GPIO, &GPIO_InitStructure);
 
 	/* Enable ADC1 clock */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
@@ -628,7 +662,7 @@ void ADC_Configuration(void)
 	 NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	 NVIC_Init(&NVIC_InitStructure);
 
-	 ADC_RegularChannelConfig(ADC1, ADC_Channel_9, 1, ADC_SampleTime_16Cycles);
+	 ADC_RegularChannelConfig(ADC1, POT_ADC_CHANNEL, 1, ADC_SampleTime_16Cycles);
 
 	 /* Enable EOC interrupt */
 	 ADC_ITConfig(ADC1, ADC_IT_EOC, ENABLE);
@@ -842,10 +876,10 @@ void led_off (led_t led)
 {
 	switch (led)
 	{
-	case LED_PC6:
+	case LED_PB6:
 		GPIO_ResetBits(GPIOB, GPIO_Pin_6);
 		break;
-	case LED_PC7:
+	case LED_PB7:
 		GPIO_ResetBits(GPIOB, GPIO_Pin_7);
 		break;
 /*	case LED_PC8:
@@ -867,10 +901,10 @@ void led_on (led_t led)
 {
 	switch (led)
 	{
-	case LED_PC6:
+	case LED_PB6:
 		GPIO_SetBits(GPIOB, GPIO_Pin_6);
 		break;
-	case LED_PC7:
+	case LED_PB7:
 		GPIO_SetBits(GPIOB, GPIO_Pin_7);
 		break;
 /*	case LED_PC8:
@@ -998,7 +1032,9 @@ int is_IRQ_enabled(void)
 
 int peripherals_init (void)
 {
-	rcc_init();
+	bool instanceMode=1; // tag=1 anchre =0
+
+	rcc_init(instanceMode);
 	rtc_init();
 	gpio_init();
 	systick_init();
@@ -1022,12 +1058,12 @@ int peripherals_init (void)
 
 void spi_peripheral_init()
 {
-	spi_init();
+	spi_init(); // appel a la configuration du SPI DM1000
 
 	//initialise SPI2 peripheral for LCD control
-	SPI2_Configuration();
+	// SPI2_Configuration(); // pas encore defini dans notre cas
 
-	port_LCD_RS_clear();
+	//port_LCD_RS_clear();
 
-	port_LCD_RW_clear();
+	//port_LCD_RW_clear();
 }
