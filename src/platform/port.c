@@ -58,8 +58,11 @@ int SysTick_Configuration(void)
 
 void RTC_Configuration(void)
 {
-	NVIC_InitTypeDef NVIC_InitStructure;
+	  NVIC_InitTypeDef NVIC_InitStructure;
 	  EXTI_InitTypeDef EXTI_InitStructure;
+
+	  RTC_WriteProtectionCmd(DISABLE);
+	  RTC_WakeUpCmd(DISABLE);
 
 	  /* Enable the PWR clock */
 	  RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
@@ -113,6 +116,8 @@ void RTC_Configuration(void)
 	  /* Enable Wakeup Counter */
 	  RTC_WakeUpCmd(ENABLE);
 	  PWR_RTCAccessCmd(ENABLE);
+
+	  RTC_WriteProtectionCmd(ENABLE);
 }
 
 
