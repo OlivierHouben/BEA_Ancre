@@ -50,7 +50,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
         </MemoryAreas>
-        <LocateLinkFile path="../linkers/stm32_flash_128k_ram_32k.ld" type="0"/>
+        <LocateLinkFile path="../linkers/stm32_flash_256k_ram_64k.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>

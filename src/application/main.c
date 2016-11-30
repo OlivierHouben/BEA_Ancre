@@ -378,7 +378,7 @@ void initLCD(void)
 	  LCD_GLASS_Clear();
 
 	  /* Configure Port A LCD Output pins as alternate function */
-	  	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_8 | GPIO_Pin_9 |GPIO_Pin_10 |GPIO_Pin_15;
+	  	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_8 | GPIO_Pin_9 |GPIO_Pin_10 ;
 	  	  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	  	  GPIO_Init( GPIOA, &GPIO_InitStructure);
 
@@ -389,18 +389,18 @@ void initLCD(void)
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource8,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource9,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource10,GPIO_AF_LCD) ;
-	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource15,GPIO_AF_LCD) ;
+	  	 // GPIO_PinAFConfig(GPIOA, GPIO_PinSource15,GPIO_AF_LCD) ;
 
 	  	  /* Configure Port B LCD Output pins as alternate function */
-	  	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	  	  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 
 	  	  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	  	  GPIO_Init( GPIOB, &GPIO_InitStructure);
 
 	  	  /* Select LCD alternate function for Port B LCD Output pins */
-	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource3,GPIO_AF_LCD) ;
-	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource4,GPIO_AF_LCD) ;
-	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource5,GPIO_AF_LCD) ;
+	  	  //GPIO_PinAFConfig(GPIOB, GPIO_PinSource3,GPIO_AF_LCD) ;
+	  	 // GPIO_PinAFConfig(GPIOB, GPIO_PinSource4,GPIO_AF_LCD) ;
+	  	 // GPIO_PinAFConfig(GPIOB, GPIO_PinSource5,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource8,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource9,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource10,GPIO_AF_LCD) ;
@@ -507,18 +507,22 @@ int main(void)
 
 //    Sleep(1000); //wait for LCD to power on
 
+
+
+	uint8 dataseq[LCD_BUFF_LEN];
+
     initLCD();
 
     memset(dataseq, 0, LCD_BUFF_LEN);
     memcpy(dataseq, (const uint8 *) "DECAWAVE        ", 16);
-    LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED); //send some data
+    LCD_GLASS_DisplayString(dataseq); //send some data
     memcpy(dataseq, (const uint8 *) SOFTWARE_VER_STRING, 16); // Also set at line #26 (Should make this from single value !!!)
      //send some data
 
    // Sleep(1000);
 
-    //s1switch = 40; //code anchor mode 3 par défaut
-    s1switch = 32; //code tag mode 3 par défaut
+    s1switch = 40; //code anchor mode 3 par défaut
+    //s1switch = 32; //code tag mode 3 par défaut
 
     port_DisableEXT_IRQ(); //disable ScenSor IRQ until we configure the device
 
@@ -526,9 +530,20 @@ int main(void)
 
 
     //run DecaRanging application
+    if(inittestapplication(s1switch) == (uint32)-1)
+      {
+          led_on(LED_ALL); //to display error....
+          dataseq[0] = 0x2 ;  //return cursor home
+          writetoLCD( 1, 0,  &dataseq[0]);
+          memset(dataseq, ' ', LCD_BUFF_LEN);
+          memcpy(dataseq, (const uint8 *) "ERROR   ", 12);
+          LCD_GLASS_DisplayString(dataseq); //send some data
+          memcpy(dataseq, (const uint8 *) "  INIT FAIL ", 12);
+          LCD_GLASS_DisplayString(dataseq); //send some data
+          return 0; //error
+      }
 
-    		uint8 dataseq[LCD_BUFF_LEN];
-        uint8 command = 0x0;
+
 
         //    command = 0x2 ;  //return cursor home
         //        writetoLCD( 1, 0,  &command);
@@ -537,21 +552,10 @@ int main(void)
           //writetoLCD( 15, 1, dataseq); //send some data
 
         led_off(LED_ALL);
-        LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED);
+        LCD_GLASS_DisplayString(dataseq);
 
-  /*      if(inittestapplication(s1switch) == (uint32)-1)
-        {
-            led_on(LED_ALL); //to display error....
-            dataseq[0] = 0x2 ;  //return cursor home
-            writetoLCD( 1, 0,  &dataseq[0]);
-            memset(dataseq, ' ', LCD_BUFF_LEN);
-            memcpy(dataseq, (const uint8 *) "ERROR   ", 12);
-            writetoLCD( 40, 1, dataseq); //send some data
-            memcpy(dataseq, (const uint8 *) "  INIT FAIL ", 12);
-            writetoLCD( 40, 1, dataseq); //send some data
-            return 0; //error
-        }
-*/
+
+
         //sleep for 5 seconds displaying "Decawave" (LEDs only if in ANCHOR mode)
 
         if(instance_mode == TAG)
@@ -591,7 +595,7 @@ int main(void)
 
         i = 0;
         led_off(LED_ALL);
-        command = 0x2 ;  //return cursor home
+
         LCD_GLASS_Clear();//writetoLCD( 1, 0,  &command);
 
         memset(dataseq, ' ', LCD_BUFF_LEN);
@@ -612,20 +616,20 @@ int main(void)
         {
             memcpy(&dataseq[2], (const uint8 *) " TAG BLINK  ", 12);
 
-            LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED); //send some data
+            LCD_GLASS_DisplayString(dataseq); //send some data
             sprintf((char*)&dataseq[0], "%llX", instance_get_addr());
-            LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED); //send some data
+            LCD_GLASS_DisplayString(dataseq); //send some data
 
         }
         else
         {
             memcpy(&dataseq[2], (const uint8 *) "  AWAITING  ", 12);
-            LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED); //send some data
+            LCD_GLASS_DisplayString(dataseq); //send some data
             memcpy(&dataseq[2], (const uint8 *) "    POLL    ", 12);
-            LCD_GLASS_ScrollSentence(dataseq,1,SCROLL_SPEED); //send some data
+            LCD_GLASS_DisplayString(dataseq); //send some data
         }
 
-        command = 0x2 ;  //return cursor home
+
         LCD_GLASS_Clear();//writetoLCD( 1, 0,  &command);
 
 #if (DWINTERRUPT_EN == 1)
@@ -685,16 +689,16 @@ int main(void)
 
 
             dataseq[0] = 0x2 ;  //return cursor home
-            writetoLCD( 1, 0,  dataseq);
+            LCD_GLASS_DisplayString(dataseq);
 
             memset(dataseq, ' ', LCD_BUFF_LEN);
             memset(dataseq1, ' ', LCD_BUFF_LEN);
             sprintf((char*)&dataseq[1], "LAST: %4.2f m", range_result);
-            writetoLCD( 40, 1, dataseq); //send some data
+            LCD_GLASS_DisplayString(dataseq);
 
             sprintf((char*)&dataseq1[1], "AVG8: %4.2f m", avg_result);
 
-            writetoLCD( 16, 1, dataseq1); //send some data
+            LCD_GLASS_DisplayString(dataseq);
 
             l = instance_get_lcount();
             aaddr = instancenewrangeancadd();
@@ -742,23 +746,23 @@ int main(void)
                 if(instancesleeping())
                 {
                     dataseq[0] = 0x2 ;  //return cursor home
-                    writetoLCD( 1, 0,  dataseq);
+                    LCD_GLASS_DisplayString(dataseq);
                     if(toggle)
                     {
                         toggle = 0;
                         memcpy(&dataseq[0], (const uint8 *) "    AWAITING    ", 16);
-                        writetoLCD( 40, 1, dataseq); //send some data
+                        LCD_GLASS_DisplayString(dataseq);
                         memcpy(&dataseq[0], (const uint8 *) "    RESPONSE    ", 16);
-                        writetoLCD( 16, 1, dataseq); //send some data
+                        LCD_GLASS_DisplayString(dataseq);
                     }
                     else
                     {
                         toggle = 1;
                         memcpy(&dataseq[2], (const uint8 *) "   TAG BLINK    ", 16);
 
-                        writetoLCD( 40, 1, dataseq); //send some data
+                        LCD_GLASS_DisplayString(dataseq);
                         sprintf((char*)&dataseq[0], "%llX", instance_get_addr());
-                        writetoLCD( 16, 1, dataseq); //send some data
+                        LCD_GLASS_DisplayString(dataseq);
                     }
                 }
 
@@ -766,11 +770,11 @@ int main(void)
                 {
                     ranging = 1;
                     dataseq[0] = 0x2 ;  //return cursor home
-                    writetoLCD( 1, 0,  dataseq);
+                    LCD_GLASS_DisplayString(dataseq);
                     memcpy(&dataseq[0], (const uint8 *) "    RANGING WITH", 16);
-                    writetoLCD( 40, 1, dataseq); //send some data
+                    LCD_GLASS_DisplayString(dataseq);
                     sprintf((char*)&dataseq[0], "%016llX", instance_get_anchaddr());
-                    writetoLCD( 16, 1, dataseq); //send some data
+                    LCD_GLASS_DisplayString(dataseq);
                 }
             }
             else //if(instance_mode == ANCHOR)
@@ -791,17 +795,17 @@ int main(void)
                         {
                             toggle = 0;
                             memcpy(&dataseq[0], (const uint8 *) "    AWAITING    ", 16);
-                            writetoLCD( 40, 1, dataseq); //send some data
+                            LCD_GLASS_DisplayString(dataseq); //send some data
                             memcpy(&dataseq[0], (const uint8 *) "      POLL      ", 16);
-                            writetoLCD( 16, 1, dataseq); //send some data
+                            LCD_GLASS_DisplayString(dataseq); //send some data
                         }
                         else
                         {
                             toggle = 1;
                             memcpy(&dataseq[0], (const uint8 *) " DISCOVERY MODE ", 16);
-                            writetoLCD( 40, 1, dataseq); //send some data
+                            LCD_GLASS_DisplayString(dataseq); //send some data
                             sprintf((char*)&dataseq[0], "%llX", instance_get_addr());
-                            writetoLCD( 16, 1, dataseq); //send some data
+                            LCD_GLASS_DisplayString(dataseq); //send some data
                         }
                     }
 
@@ -809,18 +813,18 @@ int main(void)
                 else if(instanceanchorwaiting() == 2)
                 {
                     dataseq[0] = 0x2 ;  //return cursor home
-                    writetoLCD( 1, 0,  dataseq);
+                    LCD_GLASS_DisplayString(dataseq);
                     memcpy(&dataseq[0], (const uint8 *) "    RANGING WITH", 16);
-                    writetoLCD( 40, 1, dataseq); //send some data
+                    LCD_GLASS_DisplayString(dataseq);
                     sprintf((char*)&dataseq[0], "%llX", instance_get_tagaddr());
-                    writetoLCD( 16, 1, dataseq); //send some data
+                    LCD_GLASS_DisplayString(dataseq);
                 }
             }
         }
 
     // Reset of tag list in memory if BP reset held 10 s
-    int k=2500;
-    while(is_button_reset_on() == 1)
+    int k=1000;
+    while(is_button_reset_on() == 0)
     	{
     		k--;
 
@@ -836,34 +840,35 @@ int main(void)
     		}
 
     		dataseq[0] = 0x2 ;  //return cursor home
-    		writetoLCD( 1, 0,  &dataseq[0]);
+    		LCD_GLASS_DisplayString(dataseq);
     		memset(dataseq, ' ', LCD_BUFF_LEN);
     		memcpy(dataseq, (const uint8 *) " RESET MEM ", 12);
-    		writetoLCD( 40, 1, dataseq); //send some data
+    		LCD_GLASS_DisplayString(dataseq);
     		memcpy(dataseq, (const uint8 *) "  EN COURS  ", 12);
-    		writetoLCD( 40, 1, dataseq); //send some data
+    		LCD_GLASS_DisplayString(dataseq);
     		if(k == 0)
         	{
     			instcleartaglist();
 
     			dataseq[0] = 0x2 ;  //return cursor home
-    			writetoLCD( 1, 0,  &dataseq[0]);
+    			LCD_GLASS_DisplayString(dataseq);
     			memset(dataseq, ' ', LCD_BUFF_LEN);
     			memcpy(dataseq, (const uint8 *) " RESET MEM ", 12);
-    			writetoLCD( 40, 1, dataseq); //send some data
+    			LCD_GLASS_DisplayString(dataseq);
     			memcpy(dataseq, (const uint8 *) "    DONE    ", 12);
-    			writetoLCD( 40, 1, dataseq); //send some data
+    			LCD_GLASS_DisplayString(dataseq);
 
-    			i=20; // Sleep few seconds displaying that the reset is done
-    			while(i--)
+    			i=20000; // Sleep few seconds displaying that the reset is done
+    			while(i>0)
     			{
-    				sleep(200);
+    				i--;
     			}
         	}
     	}
 
 
-    return 0;
+
 }
+    return 0;
 }
 
