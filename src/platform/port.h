@@ -83,25 +83,25 @@ typedef enum
 #define SPIx_PRESCALER				SPI_BaudRatePrescaler_8
 
 #define SPIx						SPI1   // spi dm1000
-#define SPIx_GPIO					GPIOB
+#define SPIx_GPIO					GPIOA
 #define SPIx_CS						GPIO_Pin_4
 #define SPIx_CS_GPIO				GPIOA
 #define SPIx_SCK					GPIO_Pin_5
 #define SPIx_SCK_GPIO				GPIOA
 #define SPIx_MISO					GPIO_Pin_11
-#define SPIx_MISO_GPIO				GPIOB
+#define SPIx_MISO_GPIO				GPIOA
 #define SPIx_MOSI					GPIO_Pin_12
-#define SPIx_MOSI_GPIO				GPIOB
+#define SPIx_MOSI_GPIO				GPIOA
 
-#define DW1000_RSTn					GPIO_Pin_0
-#define DW1000_RSTn_GPIO			GPIOA
+#define DW1000_RSTn					GPIO_Pin_13 // sur PA0 sur le PCB final
+#define DW1000_RSTn_GPIO			GPIOC
 
-#define DECARSTIRQ                  GPIO_Pin_0
-#define DECARSTIRQ_GPIO             GPIOA
-#define DECARSTIRQ_EXTI             EXTI_Line0
-#define DECARSTIRQ_EXTI_PORT        EXTI_PortSourceGPIOA
-#define DECARSTIRQ_EXTI_PIN         GPIO_PinSource0
-#define DECARSTIRQ_EXTI_IRQn        EXTI0_IRQn
+#define DECARSTIRQ                  GPIO_Pin_13
+#define DECARSTIRQ_GPIO             GPIOC
+#define DECARSTIRQ_EXTI             EXTI_Line13
+#define DECARSTIRQ_EXTI_PORT        EXTI_PortSourceGPIOC
+#define DECARSTIRQ_EXTI_PIN         GPIO_PinSource13
+#define DECARSTIRQ_EXTI_IRQn        EXTI15_10_IRQn
 
 #define DECAIRQ                     GPIO_Pin_2
 #define DECAIRQ_GPIO                GPIOB
@@ -119,7 +119,7 @@ typedef enum
 #define TA_RESP_DLY_GPIO            GPIOC
 
 #define TAG_RESET_GPIO				GPIOA // GPIOC
-#define TAG_RESET_GPIO_PIN			GPIO_Pin_14 // GPIO_Pin_11
+#define TAG_RESET_GPIO_PIN			GPIO_Pin_0 // GPIO_Pin_11
 #define DOOR_GPIO					GPIOC
 #define DOOR_GPIO_PIN				GPIO_Pin_12
 #define REGISTERING_GPIO			GPIOA // GPIOC
