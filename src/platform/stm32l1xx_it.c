@@ -223,12 +223,12 @@ void SysTick_Handler(void)
 #endif
 }
 
-void EXTI15_10_IRQHandler(void)
+/*void EXTI15_10_IRQHandler(void)
 {
 	//button_callback();
-	/* Clear EXTI Line 13 Pending Bit */
+	//Clear EXTI Line 13 Pending Bit
 	EXTI_ClearITPendingBit(EXTI_Line13);
-}
+}*/
 
 /******************************************************************************/
 /*                 STM32L1xx Peripherals Interrupt Handlers                   */
@@ -242,7 +242,7 @@ void EXTI15_10_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void EXTI10_15_IRQHandler(void)
+void EXTI15_10_IRQHandler(void)
 {
 	process_dwRSTn_irq();
     /* Clear EXTI Line 0 Pending Bit */
