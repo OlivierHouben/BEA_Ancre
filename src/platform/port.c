@@ -532,9 +532,9 @@ int GPIO_Configuration(void)
 
 	// bouton utilisateur discovery PA0
 	GPIO_InitStructure.GPIO_Pin = TAG_RESET_GPIO_PIN;
-		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
-		GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
 
 
 /*
@@ -583,6 +583,12 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
+
+	// Enable GPIO used by the dipswitch
+	GPIO_InitStructure.GPIO_Pin = DIPSWITCH1_GPIO_PIN | DIPSWITCH2_GPIO_PIN;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(DIPSWITCH_GPIO, &GPIO_InitStructure);
 
 */
 	// Disable GPIOs clocks
