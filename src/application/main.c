@@ -756,7 +756,11 @@ int main(void)
             			p--;
             			if(p <= 100)
             			{
-                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET); // Door opened in this case
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
+            			}
+            			if(p == 0)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
                     		p = 1000;
             			}
             		}
@@ -767,7 +771,11 @@ int main(void)
             			p--;
             			if(p <= 100)
             			{
-                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET); // Door opened in this case
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
+            			}
+            			if(p == 0)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
                     		p = 4000;
             			}
             		}
