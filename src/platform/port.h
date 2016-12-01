@@ -83,15 +83,15 @@ typedef enum
 #define SPIx_PRESCALER				SPI_BaudRatePrescaler_8
 
 #define SPIx						SPI1   // spi dm1000
-#define SPIx_GPIO					GPIOB
-#define SPIx_CS						GPIO_Pin_15
+#define SPIx_GPIO					GPIOA
+#define SPIx_CS						GPIO_Pin_4
 #define SPIx_CS_GPIO				GPIOA
-#define SPIx_SCK					GPIO_Pin_3
-#define SPIx_SCK_GPIO				GPIOB
-#define SPIx_MISO					GPIO_Pin_4
-#define SPIx_MISO_GPIO				GPIOB
-#define SPIx_MOSI					GPIO_Pin_5
-#define SPIx_MOSI_GPIO				GPIOB
+#define SPIx_SCK					GPIO_Pin_5
+#define SPIx_SCK_GPIO				GPIOA
+#define SPIx_MISO					GPIO_Pin_11
+#define SPIx_MISO_GPIO				GPIOA
+#define SPIx_MOSI					GPIO_Pin_12
+#define SPIx_MOSI_GPIO				GPIOA
 
 #define DW1000_RSTn					GPIO_Pin_13
 #define DW1000_RSTn_GPIO			GPIOC

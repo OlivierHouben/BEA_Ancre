@@ -378,7 +378,7 @@ void initLCD(void)
 	  LCD_GLASS_Clear();
 
 	  /* Configure Port A LCD Output pins as alternate function */
-	  	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_8 | GPIO_Pin_9 |GPIO_Pin_10 ;
+	  	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_8 | GPIO_Pin_9 |GPIO_Pin_10|GPIO_Pin_15 ;
 	  	  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	  	  GPIO_Init( GPIOA, &GPIO_InitStructure);
 
@@ -389,18 +389,18 @@ void initLCD(void)
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource8,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource9,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOA, GPIO_PinSource10,GPIO_AF_LCD) ;
-	  	 // GPIO_PinAFConfig(GPIOA, GPIO_PinSource15,GPIO_AF_LCD) ;
+	  	 GPIO_PinAFConfig(GPIOA, GPIO_PinSource15,GPIO_AF_LCD) ;
 
 	  	  /* Configure Port B LCD Output pins as alternate function */
-	  	  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	  	  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_3 |GPIO_Pin_4 |GPIO_Pin_5 |GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 
 	  	  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	  	  GPIO_Init( GPIOB, &GPIO_InitStructure);
 
 	  	  /* Select LCD alternate function for Port B LCD Output pins */
-	  	  //GPIO_PinAFConfig(GPIOB, GPIO_PinSource3,GPIO_AF_LCD) ;
-	  	 // GPIO_PinAFConfig(GPIOB, GPIO_PinSource4,GPIO_AF_LCD) ;
-	  	 // GPIO_PinAFConfig(GPIOB, GPIO_PinSource5,GPIO_AF_LCD) ;
+	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource3,GPIO_AF_LCD) ;
+	  	 GPIO_PinAFConfig(GPIOB, GPIO_PinSource4,GPIO_AF_LCD) ;
+	  	 GPIO_PinAFConfig(GPIOB, GPIO_PinSource5,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource8,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource9,GPIO_AF_LCD) ;
 	  	  GPIO_PinAFConfig(GPIOB, GPIO_PinSource10,GPIO_AF_LCD) ;
@@ -503,6 +503,10 @@ int main(void)
     peripherals_init();
 
     spi_peripheral_init();
+    int testAF1= GPIOA->AFR[0];
+    int testAF2=GPIOA->AFR[1];
+    	    int testMODE=GPIOA->MODER;
+    	    int testOUT=GPIOA->OTYPER;
     InitializeTimer();
 
 //    Sleep(1000); //wait for LCD to power on
@@ -511,7 +515,12 @@ int main(void)
 
 	uint8 dataseq[LCD_BUFF_LEN];
 
+
     initLCD();
+     testAF1= GPIOA->AFR[0];
+     testAF2= GPIOA->AFR[1];
+        testMODE=GPIOA->MODER;
+       testOUT=GPIOA->OTYPER;
 
     memset(dataseq, 0, LCD_BUFF_LEN);
     memcpy(dataseq, (const uint8 *) "DECAWAVE        ", 16);
@@ -527,6 +536,8 @@ int main(void)
     port_DisableEXT_IRQ(); //disable ScenSor IRQ until we configure the device
 
     //test EVB1000 - used in EVK1000 production
+
+
 
 
     //run DecaRanging application

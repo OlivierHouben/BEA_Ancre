@@ -377,6 +377,7 @@ int SPI_Configuration(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
 	GPIO_Init(SPIx_SCK_GPIO, &GPIO_InitStructure);
+	GPIO_PinAFConfig(SPIx_SCK_GPIO,GPIO_PinSource5,GPIO_AF_SPI1); //SCLK
 
 	// SPIx MOSI pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_MOSI;
@@ -386,6 +387,7 @@ int SPI_Configuration(void)
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
 
 	GPIO_Init(SPIx_MOSI_GPIO, &GPIO_InitStructure);
+	GPIO_PinAFConfig(SPIx_MOSI_GPIO,GPIO_PinSource12,GPIO_AF_SPI1); //MOSI
 
 	// SPIx MISO pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_MISO;
@@ -393,6 +395,7 @@ int SPI_Configuration(void)
 	//GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
+	GPIO_PinAFConfig(SPIx_MISO_GPIO,GPIO_PinSource11,GPIO_AF_SPI1); //MISO
 
 	GPIO_Init(SPIx_MISO_GPIO, &GPIO_InitStructure);
 
@@ -412,11 +415,8 @@ int SPI_Configuration(void)
 
 	// Enable SPIx
 	SPI_Cmd(SPIx, ENABLE);
-	//Mappage des pin SPI
 
-		GPIO_PinAFConfig(SPIx_SCK_GPIO,GPIO_PinSource3,GPIO_AF_SPI1); //SCLK
-		GPIO_PinAFConfig(SPIx_MISO_GPIO,GPIO_PinSource4,GPIO_AF_SPI1); //MISO
-		GPIO_PinAFConfig(SPIx_MOSI_GPIO,GPIO_PinSource5,GPIO_AF_SPI1); //MOSI
+
 
 
 	// Set CS high
