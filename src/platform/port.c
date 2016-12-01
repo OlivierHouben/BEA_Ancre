@@ -139,7 +139,6 @@ int NVIC_Configuration(void)
 
 	// Enable GPIO used as DECA IRQ for interrupt
 	GPIO_InitStructure.GPIO_Pin = DECAIRQ;
-	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd = 	GPIO_PuPd_DOWN;	//IRQ pin should be Pull Down to prevent unnecessary EXT IRQ while DW1000 goes to sleep mode
 	GPIO_Init(DECAIRQ_GPIO, &GPIO_InitStructure);
 
@@ -204,17 +203,13 @@ ITStatus EXTI_GetITEnStatus(uint32_t EXTI_Line)
 int RCC_Configuration(void)
 {
 	RCC_ClocksTypeDef RCC_ClockFreq;
-
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
 
 	/* RCC system reset(for debug purpose) */
 	RCC_DeInit();
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     	/* Enable HSI */
     	RCC_HSICmd(ENABLE);
 
@@ -228,13 +223,13 @@ int RCC_Configuration(void)
     	/* Flash 1 wait state */
     	FLASH_SetLatency(FLASH_Latency_1);
     	/* HCLK = SYSCLK */
-    	RCC_HCLKConfig(RCC_SYSCLK_Div16);
+    	RCC_HCLKConfig(RCC_SYSCLK_Div1);
     	/* PCLK2 = HCLK */
-   		RCC_PCLK2Config(RCC_HCLK_Div2);
+   		RCC_PCLK2Config(RCC_HCLK_Div1);
    		/* PCLK1 = HCLK/2 */
    		RCC_PCLK1Config(RCC_HCLK_Div2);
    		/*  ADCCLK = PCLK2/4 */
-    	ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div2;
+    	ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div1;
     	ADC_CommonInit(&ADC_CommonInitStructure);
 
     	/* Configure PLL *********************************************************/
@@ -249,13 +244,8 @@ int RCC_Configuration(void)
 
     	RCC_SYSCLKConfig(RCC_SYSCLKSource_HSI);
 
-<<<<<<< HEAD
     	/* Wait till PLL is used as system clock source */
     	while (RCC_GetSYSCLKSource() != 0x04){}
-=======
-    	uint8_t test=RCC_GetSYSCLKSource();
-
->>>>>>> origin/master
 
     	RCC_GetClocksFreq(&RCC_ClockFreq);
 
@@ -271,14 +261,7 @@ int RCC_Configuration(void)
     						RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |
     						RCC_AHBPeriph_GPIOE,	ENABLE);
     	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-<<<<<<< HEAD
     	 RCC_APB1PeriphClockCmd(RCC_APB1Periph_COMP | RCC_APB1Periph_LCD | RCC_APB1Periph_PWR,ENABLE);
-=======
-    	 RCC_APB1PeriphClockCmd(RCC_APB1Periph_COMP |  RCC_APB1Periph_PWR|RCC_APB1Periph_LCD,ENABLE);
-    	  test=RCC_GetSYSCLKSource();
-    	 /* Wait till PLL is used as system clock source */
-    	     	while (RCC_GetSYSCLKSource() != 0x0C){}
->>>>>>> origin/master
 
 
 	return 0;
@@ -387,25 +370,12 @@ int SPI_Configuration(void)
 
 	SPI_Init(SPIx, &SPI_InitStructure);
 
-	GPIO_InitStructure.GPIO_Pin = SPIx_SCK | SPIx_MOSI | SPIx_MISO;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	 GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-	 /*
 	// SPIx SCK pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_SCK;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-<<<<<<< HEAD
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
-=======
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
-
->>>>>>> origin/master
 	GPIO_Init(SPIx_SCK_GPIO, &GPIO_InitStructure);
 	GPIO_PinAFConfig(SPIx_SCK_GPIO,GPIO_PinSource5,GPIO_AF_SPI1); //SCLK
 
@@ -413,13 +383,8 @@ int SPI_Configuration(void)
 	GPIO_InitStructure.GPIO_Pin = SPIx_MOSI;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-<<<<<<< HEAD
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
-=======
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
-
->>>>>>> origin/master
 
 	GPIO_Init(SPIx_MOSI_GPIO, &GPIO_InitStructure);
 	GPIO_PinAFConfig(SPIx_MOSI_GPIO,GPIO_PinSource12,GPIO_AF_SPI1); //MOSI
@@ -428,31 +393,20 @@ int SPI_Configuration(void)
 	GPIO_InitStructure.GPIO_Pin = SPIx_MISO;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	//GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-<<<<<<< HEAD
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
 	GPIO_PinAFConfig(SPIx_MISO_GPIO,GPIO_PinSource11,GPIO_AF_SPI1); //MISO
-=======
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
->>>>>>> origin/master
 
-
-	GPIO_Init(SPIx_MISO_GPIO, &GPIO_InitStructure); */
+	GPIO_Init(SPIx_MISO_GPIO, &GPIO_InitStructure);
 
 
 
 	// SPIx CS pin setup
 	GPIO_InitStructure.GPIO_Pin = SPIx_CS;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-<<<<<<< HEAD
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; /* Push-pull or open drain */
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP; /* None, Pull-up or pull-down */
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-=======
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
->>>>>>> origin/master
 
 	GPIO_Init(SPIx_CS_GPIO, &GPIO_InitStructure);
 
@@ -461,16 +415,9 @@ int SPI_Configuration(void)
 
 	// Enable SPIx
 	SPI_Cmd(SPIx, ENABLE);
-<<<<<<< HEAD
 
 
 
-=======
-	//Mappage des pin SPI
-		GPIO_PinAFConfig(SPIx_SCK_GPIO,SPIx_SCK, GPIO_AF_SPI1); //SCLK
-		GPIO_PinAFConfig(SPIx_MOSI_GPIO,SPIx_MOSI, GPIO_AF_SPI1); //MOSI
-		GPIO_PinAFConfig(SPIx_MISO_GPIO,SPIx_MISO, GPIO_AF_SPI1); //MISO
->>>>>>> origin/master
 
 	// Set CS high
 	GPIO_SetBits(SPIx_CS_GPIO, SPIx_CS);
@@ -565,7 +512,6 @@ int GPIO_Configuration(void)
 
 
 	// Set all GPIO pins as analog inputs
-<<<<<<< HEAD
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
@@ -574,18 +520,11 @@ int GPIO_Configuration(void)
 
 	//GPIO_Init(GPIOA, &GPIO_InitStructure);
 	//GPIO_Init(GPIOB, &GPIO_InitStructure);
-=======
-	GPIO_StructInit(&GPIO_InitStructure);
-/*
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
-	GPIO_Init(GPIOB, &GPIO_InitStructure);			// a resoudre pour consommer poins de courant .
->>>>>>> origin/master
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 	//GPIO_Init(GPIOD, &GPIO_InitStructure);
 
 	//GPIO_Init(GPIOE, &GPIO_InitStructure);
 
-<<<<<<< HEAD
 	// bouton utilisateur discovery PA0
 	GPIO_InitStructure.GPIO_Pin = TAG_RESET_GPIO_PIN;
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
@@ -612,9 +551,6 @@ int GPIO_Configuration(void)
 
 
 
-=======
-*/
->>>>>>> origin/master
 
 	// Enable GPIO used for LEDs
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
@@ -623,11 +559,7 @@ int GPIO_Configuration(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 //	GPIO_PinAFConfig(GPIO_AF_SPI1, DISABLE);//GPIO_PinRemapConfig(GPIO_Remap_SPI1, DISABLE); C'est cette fonction qu'il faut analyser
 
-<<<<<<< HEAD
 /*
-=======
-/* a decomenter pour uiliser les sortie et entré de collo
->>>>>>> origin/master
 	// Enable GPIO used to command the relay, commanding the door PB8
 	GPIO_InitStructure.GPIO_Pin = DOOR_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
@@ -635,15 +567,11 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(DOOR_GPIO, &GPIO_InitStructure);
 
-<<<<<<< HEAD
 	// Enable GPIO used to register new tags
 	GPIO_InitStructure.GPIO_Pin = REGISTERING_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(REGISTERING_GPIO, &GPIO_InitStructure);
-=======
-
->>>>>>> origin/master
 
 	// Enable GPIO used to clear tag list
 	GPIO_InitStructure.GPIO_Pin = TAG_RESET_GPIO_PIN;
@@ -651,13 +579,6 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
 
-<<<<<<< HEAD
-=======
-	// Enable GPIO used to register new tags
-	GPIO_InitStructure.GPIO_Pin = REGISTERING_GPIO_PIN;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-	GPIO_Init(REGISTERING_GPIO, &GPIO_InitStructure);
->>>>>>> origin/master
 */
 	// Disable GPIOs clocks
 	//RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB |RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |RCC_AHBPeriph_GPIOE,DISABLE);
@@ -717,7 +638,6 @@ void reset_DW1000(void)
 
 	// Enable GPIO used for DW1000 reset
 	GPIO_InitStructure.GPIO_Pin = DW1000_RSTn;
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(DW1000_RSTn_GPIO, &GPIO_InitStructure);
@@ -791,6 +711,88 @@ void setup_DW1000RSTnIRQ(int enable)
 
 int ETH_GPIOConfigure(void)
 {
+#if 0
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	/* ETHERNET pins configuration */
+	/* AF Output Push Pull:
+	- ETH_MII_MDIO / ETH_RMII_MDIO: PA2
+	- ETH_MII_MDC / ETH_RMII_MDC: PC1
+	- ETH_MII_TXD2: PC2
+	- ETH_MII_TX_EN / ETH_RMII_TX_EN: PB11
+	- ETH_MII_TXD0 / ETH_RMII_TXD0: PB12
+	- ETH_MII_TXD1 / ETH_RMII_TXD1: PB13
+	- ETH_MII_PPS_OUT / ETH_RMII_PPS_OUT: PB5
+	- ETH_MII_TXD3: PB8 */
+
+	/* Configure PA2 as alternate function push-pull */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	/* Configure PC1 and PC2 as alternate function push-pull */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+	/* Configure PB5, PB8, PB11, PB12 and PB13 as alternate function push-pull */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_8 | GPIO_Pin_11 |
+								GPIO_Pin_12 | GPIO_Pin_13;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+	/**************************************************************/
+	/*               For Remapped Ethernet pins                   */
+	/*************************************************************/
+	/* Input (Reset Value):
+	- ETH_MII_CRS CRS: PA0
+	- ETH_MII_RX_CLK / ETH_RMII_REF_CLK: PA1
+	- ETH_MII_COL: PA3
+	- ETH_MII_RX_DV / ETH_RMII_CRS_DV: PD8
+	- ETH_MII_TX_CLK: PC3
+	- ETH_MII_RXD0 / ETH_RMII_RXD0: PD9
+	- ETH_MII_RXD1 / ETH_RMII_RXD1: PD10
+	- ETH_MII_RXD2: PD11
+	- ETH_MII_RXD3: PD12
+	- ETH_MII_RX_ER: PB10 */
+
+	/* Configure PA0, PA1 and PA3 as input */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	/* Configure PB10 as input */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+	/* Configure PC3 as input */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+	/* Configure PD8, PD9, PD10, PD11 and PD12 as input */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(GPIOD, &GPIO_InitStructure); /**/
+
+
+
+	/* MCO pin configuration------------------------------------------------- */
+	/* Configure MCO (PA8) as alternate function push-pull */
+	//GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+	//GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+	//GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	//GPIO_Init(GPIOA, &GPIO_InitStructure);
+#endif
+
 	return 0;
 }
 

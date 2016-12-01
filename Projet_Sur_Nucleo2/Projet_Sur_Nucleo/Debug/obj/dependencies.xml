@@ -1,0 +1,487 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32L1xx_StdPeriph_Driver\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Core /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Class\cdc\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32L1xx_StdPeriph_Driver\src /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1 /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\CMSIS\CM3\DeviceSupport /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32L1xx_StdPeriph_Driver /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\sys /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\decadriver /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Core\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\compiler /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\STM32L-DISCOVERY /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_OTG_Driver\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Class\msc\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Class\cdc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_OTG_Driver\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Class\cdc\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\usb /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\STM32L-DISCOVERY /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\CMSIS\CM3\DeviceSupport\ST /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32L1xx_StdPeriph_Driver\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\startup /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Class /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_Device_Library\Core\inc /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\application /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\STM32_USB_OTG_Driver /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\Libraries\CMSIS\CM3\CoreSupport /I..\..\..\..\..\..\..\Desktop\ROLLBACK GITHUB\BEA_Ancre-852d895ecbd3b8b1ff78874a0b1792dd5b2785a1\src\platform">
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_hcd_int.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_hcd.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_iwdg.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_iwdg.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_core.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_req.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd_int.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_sdio.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_sdio.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_iwdg.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\instance_calib.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\application\instance.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_spi.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_spi.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_dma.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dma.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_flash_ramfunc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_flash.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_sdio.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_range_tables.c" lastModified="158b8d3c4a0">
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_param_types.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_syscfg.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_syscfg.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rcc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_spi.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dma.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_defines.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\misc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\instance_common.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\deca_spi.h"/>
+         <include file="..\..\..\..\src\application\instance.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dbgmcu.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Device\ST\STM32L1xx\Source\Templates\gcc_ride7\startup_stm32l1xx_mdp.s" lastModified="158b8d3bcd0">
+      </source>
+      <source file="..\..\..\..\src\sys\syscalls.c" lastModified="158b8d3c0b8">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd_int.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd.h"/>
+      </source>
+      <source file="..\..\..\..\src\compiler\compiler.h" lastModified="158b8d3fb50">
+         <include file="..\..\..\..\src\sys\sleep.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_regs.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_version.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_lcd.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_wwdg.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_wwdg.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\deca_spi.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_types.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\main.c" lastModified="158b8d3c0b8">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+         <include file="..\..\..\..\src\application\instance.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+         <include file="..\..\..\..\src\platform\deca_spi.h"/>
+         <include file="..\..\..\..\STM32L-DISCOVERY\stm32l_discovery_lcd.h"/>
+         <include file="..\..\..\..\STM32L-DISCOVERY\discover_board.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\deca_spi.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\platform\deca_spi.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_wwdg.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\port.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\misc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\port.c" lastModified="158b8d3c888">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_usr.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_ioreq.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_regs.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_opamp.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_crc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_crc.h"/>
+      </source>
+      <source file="..\..\..\..\src\usb\usbd_conf.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_version.h" lastModified="158b8d3bcd0">
+      </source>
+      <source file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cmFunc.h" lastModified="158b8d3c4a0">
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_adc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_adc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\usbd_cdc_core.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_crc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_adc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_opamp.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_opamp.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_syscfg.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\src\usbd_cdc_core.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\usbd_cdc_core.h"/>
+         <include file="..\..\..\..\src\usb\usbd_desc.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_req.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_req.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_req.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h"/>
+         <include file="..\..\..\..\src\usb\usbd_desc.h"/>
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\..\src\usb\usb_conf.h" lastModified="158b8d3ef98">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\lib.h" lastModified="158b8d3bcd0">
+      </source>
+      <source file="..\..\..\..\src\usb\deca_usb.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\platform\port.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\usbd_cdc_core.h"/>
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_def.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_i2c.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_i2c.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_dcd.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_req.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_def.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cmInstr.h" lastModified="158b8d3c4a0">
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_comp.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_comp.h"/>
+      </source>
+      <source file="..\..\..\..\src\sys\sleep.h" lastModified="158b8d3bcd0">
+      </source>
+      <source file="..\..\..\..\src\usb\deca_usb.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\deca_usb.h"/>
+         <include file="..\..\..\..\src\application\instance.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+         <include file="..\..\..\..\src\platform\deca_spi.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\usbd_cdc_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_usr.h"/>
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+         <include file="..\..\..\..\src\usb\usbd_desc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_pwr.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L-DISCOVERY\stm32l_discovery_lcd.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+         <include file="..\..\..\..\STM32L-DISCOVERY\discover_board.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rtc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rtc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_hcd.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_regs.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_exti.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_exti.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_i2c.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\deca_mutex.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L-DISCOVERY\stm32l_discovery_lcd.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\STM32L-DISCOVERY\stm32l_discovery_lcd.h"/>
+         <include file="..\..\..\..\STM32L-DISCOVERY\discover_board.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_tim.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_tim.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_pwr.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_comp.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\stm32l1xx_it.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rtc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\usb\usbd_desc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_def.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_exti.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\usb\usbd_usr.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_usr.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_def.h"/>
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\stm32l1xx_it.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\platform\stm32l1xx_it.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_tim.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c" lastModified="158b8d3c0b8">
+      </source>
+      <source file="..\..\..\..\src\usb\usbd_desc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+         <include file="..\..\..\..\src\usb\usbd_desc.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_req.h"/>
+         <include file="..\..\..\..\src\usb\usbd_conf.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_regs.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_device_api.h" lastModified="158b8d3c0b8">
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_fsmc.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_fsmc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_dac.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dac.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_fsmc.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h" lastModified="158b8d3c0b8">
+         <include file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cm3.h"/>
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\system_stm32l1xx.h"/>
+         <include file="..\..\..\..\src\platform\stm32l1xx_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_core.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L-DISCOVERY\discover_board.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dac.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\stm32l1xx_conf.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_adc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_aes.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_comp.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_crc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dac.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dbgmcu.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dma.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_exti.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_flash.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_fsmc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_gpio.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_i2c.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_iwdg.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_opamp.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_pwr.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rtc.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_sdio.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_spi.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_syscfg.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_tim.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_usart.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_wwdg.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_flash.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cm3.h" lastModified="158b8d3c0b8">
+         <include file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cmInstr.h"/>
+         <include file="..\..\..\..\STM32L1xx_StdPeriph_Lib_V1.3.1\Libraries\CMSIS\Include\core_cmFunc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_hcd.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_hcd.h"/>
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_usart.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\usb\usb_conf.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_regs.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_defines.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_device.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_param_types.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_regs.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_param_types.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_flash.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_flash.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\instance.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_aes_util.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_aes.h"/>
+      </source>
+      <source file="..\..\..\..\src\sys\unistd.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\sys\sleep.h"/>
+      </source>
+      <source file="..\..\..\..\src\application\instance.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\src\compiler\compiler.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\deca_spi.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_regs.h"/>
+         <include file="..\..\..\..\src\application\lib.h"/>
+         <include file="..\..\..\..\src\application\instance.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_usart.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_usart.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_hcd_int.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_core.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_defines.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_hcd_int.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_aes.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_aes.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\system_stm32l1xx.h" lastModified="158b8d3bcd0">
+      </source>
+      <source file="..\..\..\..\src\decadriver\deca_params_init.c" lastModified="158b8d3c4a0">
+         <include file="..\..\..\..\src\decadriver\deca_regs.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_param_types.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\system_stm32l1xx.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_aes.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_gpio.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_gpio.h"/>
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_dcd_int.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_dcd_int.h"/>
+      </source>
+      <source file="..\..\..\..\src\platform\dma_spi.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dma.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_types.h"/>
+         <include file="..\..\..\..\src\decadriver\deca_device_api.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_gpio.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h"/>
+      </source>
+      <source file="..\..\..\..\src\usb\deca_usb_bsp_evk1000.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\inc\usb_bsp.h"/>
+         <include file="..\..\..\..\src\platform\port.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_dbgmcu.c" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dbgmcu.h"/>
+      </source>
+      <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_ioreq.h" lastModified="158b8d3bcd0">
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_def.h"/>
+         <include file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\inc\usbd_core.h"/>
+      </source>
+   </includePath>
+</dependencies>

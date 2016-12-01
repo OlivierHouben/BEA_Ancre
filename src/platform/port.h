@@ -93,7 +93,6 @@ typedef enum
 #define SPIx_MOSI					GPIO_Pin_12
 #define SPIx_MOSI_GPIO				GPIOA
 
-<<<<<<< HEAD
 #define DW1000_RSTn					GPIO_Pin_13
 #define DW1000_RSTn_GPIO			GPIOC
 
@@ -103,17 +102,6 @@ typedef enum
 #define DECARSTIRQ_EXTI_PORT        EXTI_PortSourceGPIOA
 #define DECARSTIRQ_EXTI_PIN         GPIO_PinSource0
 #define DECARSTIRQ_EXTI_IRQn        EXTI0_IRQn
-=======
-#define DW1000_RSTn					GPIO_Pin_13 //GPIO_Pin_0
-#define DW1000_RSTn_GPIO			GPIOC //GPIOA
-
-#define DECARSTIRQ                  GPIO_Pin_13 //GPIO_Pin_0
-#define DECARSTIRQ_GPIO             GPIOC //GPIOA
-#define DECARSTIRQ_EXTI             EXTI_Line13 //EXTI_Line0
-#define DECARSTIRQ_EXTI_PORT        EXTI_PortSourceGPIOC //EXTI_PortSourceGPIOA
-#define DECARSTIRQ_EXTI_PIN         GPIO_PinSource13 //GPIO_PinSource0
-#define DECARSTIRQ_EXTI_IRQn        EXTI15_10_IRQn //EXTI0_IRQn
->>>>>>> origin/master
 
 #define DECAIRQ                     GPIO_Pin_2
 #define DECAIRQ_GPIO                GPIOB
@@ -130,17 +118,12 @@ typedef enum
 #define TA_RESP_DLY                 GPIO_Pin_0
 #define TA_RESP_DLY_GPIO            GPIOC
 
-<<<<<<< HEAD
 #define TAG_RESET_GPIO				GPIOA // GPIOC
 #define TAG_RESET_GPIO_PIN			GPIO_Pin_0 // GPIO_Pin_11
-=======
-#define TAG_RESET_GPIO				GPIOC
-#define TAG_RESET_GPIO_PIN			GPIO_Pin_11
->>>>>>> origin/master
 #define DOOR_GPIO					GPIOC
 #define DOOR_GPIO_PIN				GPIO_Pin_12
-#define REGISTERING_GPIO			GPIOC
-#define REGISTERING_GPIO_PIN		GPIO_Pin_10
+#define REGISTERING_GPIO			GPIOA // GPIOC
+#define REGISTERING_GPIO_PIN		GPIO_Pin_13 // GPIO_Pin_10
 #define POT_GPIO					GPIOC // Pris par le LCD , prendre PC4 plus tard, chanel 14
 #define POT_GPIO_PIN				GPIO_Pin_0 //GPIO_Pin_4
 #define POT_ADC_CHANNEL				ADC_Channel_10 //ADC_Channel_14

@@ -227,10 +227,7 @@ void EXTI15_10_IRQHandler(void)
 {
 	//button_callback();
 	/* Clear EXTI Line 13 Pending Bit */
-	/*EXTI_ClearITPendingBit(EXTI_Line13);*/
-	process_dwRSTn_irq();
-    /* Clear EXTI Line 0 Pending Bit */
-    EXTI_ClearITPendingBit(DECARSTIRQ_EXTI);
+	EXTI_ClearITPendingBit(EXTI_Line13);
 }
 
 /******************************************************************************/
