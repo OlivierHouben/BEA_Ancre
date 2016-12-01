@@ -242,7 +242,7 @@ void EXTI15_10_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void EXTI0_IRQHandler(void)
+void EXTI10_15_IRQHandler(void)
 {
 	process_dwRSTn_irq();
     /* Clear EXTI Line 0 Pending Bit */
