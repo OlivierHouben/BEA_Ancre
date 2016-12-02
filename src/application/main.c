@@ -681,7 +681,7 @@ int main(void)
 
         if(instancenewrange())
         {
-        	int n, l = 0, aaddr, taddr, txa, rxa, rng, rng_raw;
+        	int n, l = 0, aaddr, taddr, txa, rxa, rng, rng_raw, p;
             ranging = 1;
             // Send the new range information to LCD and/or USB
             range_result = instance_get_idist();
@@ -742,8 +742,43 @@ int main(void)
             	{
                 	led_on(LED_PB6); // Green LED means that the anchor is linked with one tag
                 	led_off(LED_PB7);
-            		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET); // Door opened in this case
             		n = sprintf((char*)&dataseq[0], "ia%04x t%04x %08x %08x %04x %04x %04x a", aaddr, taddr, rng, rng_raw, l, txa, rxa);
+
+            		//Dipswitch1 on, toggle mode
+            		if(GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN))
+            		{
+                		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET); // Door opened in this case
+            		}
+
+            		//dipswitch1 off, dipswitch2 on, pulse of 0,05s every 0,5s
+            		else if(!GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN) && GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH2_GPIO_PIN))
+            		{
+            			p--;
+            			if(p <= 100)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
+            			}
+            			if(p == 0)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
+                    		p = 1000;
+            			}
+            		}
+
+            		//dipswitch1 off, dipswitch2 off, pulse of 0,05s every 2s
+            		else if(!GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN) && GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH2_GPIO_PIN))
+            		{
+            			p--;
+            			if(p <= 100)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
+            			}
+            			if(p == 0)
+            			{
+                    		GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
+                    		p = 4000;
+            			}
+            		}
             	}
             }
 

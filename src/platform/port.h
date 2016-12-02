@@ -127,6 +127,9 @@ typedef enum
 #define POT_GPIO					GPIOC // Pris par le LCD , prendre PC4 plus tard, chanel 14
 #define POT_GPIO_PIN				GPIO_Pin_0 //GPIO_Pin_4
 #define POT_ADC_CHANNEL				ADC_Channel_10 //ADC_Channel_14
+#define DIPSWITCH_GPIO				GPIOB
+#define DIPSWITCH1_GPIO_PIN			GPIO_Pin_13
+#define DIPSWITCH2_GPIO_PIN			GPIO_Pin_12
 
 #define S1_SWITCH_ON  (1)
 #define S1_SWITCH_OFF (0)
