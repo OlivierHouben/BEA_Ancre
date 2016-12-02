@@ -413,6 +413,9 @@ int instance_init(void)
 
     instance_clearevents();
 
+    uint8 EUI64[8]={0xFA,0xFA,0xFA,0xFA,0xFA,0xFA,0xFA,0xFA,}; // adrese pour test /
+       dwt_seteui(&EUI64);
+
     dwt_geteui(instance_data[instance].eui64);
 
     instance_localdata[instance].testapprun_fn = NULL;

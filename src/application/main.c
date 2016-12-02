@@ -225,6 +225,7 @@ uint32 inittestapplication(uint8 s1switch)
         dwt_softreset();
     }
 
+
     //reset the DW1000 by driving the RSTn line low
     reset_DW1000();
 
@@ -869,7 +870,7 @@ int main(void)
         }
 
     // Reset of tag list in memory if BP reset held 10 s
-    int k=1000;
+ /*   int k=1000;
     while(is_button_reset_on() == 0)
     	{
     		k--;
@@ -911,7 +912,7 @@ int main(void)
     			}
         	}
     	}
-
+*/
 
 
 }
