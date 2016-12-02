@@ -28,7 +28,7 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="port.h" partName="port.h" path="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/port.h" title="port.h" tooltip="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/port.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/platform/port.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2442" selectionTopPixel="1535"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1703" selectionTopPixel="1781"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="deca_usb.c" partName="deca_usb.c" path="C:/Users/olivi/OneDrive/Documents/GitHub/DecawaveEnhencedv5/src/usb/deca_usb.c" title="deca_usb.c" tooltip="C:/Users/olivi/OneDrive/Documents/GitHub/DecawaveEnhencedv5/src/usb/deca_usb.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/usb/deca_usb.c"/>
@@ -40,15 +40,15 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="port.c" partName="port.c" path="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/port.c" title="port.c" tooltip="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/port.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/platform/port.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="26925" selectionTopPixel="14535"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="19256" selectionTopPixel="16176"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/olivi/OneDrive/Documents/GitHub/DecawaveEnhencedv5/src/application/main.c" title="main.c" tooltip="C:/Users/olivi/OneDrive/Documents/GitHub/DecawaveEnhencedv5/src/application/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/application/main.c" title="main.c" tooltip="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/application/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/application/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="27718" selectionTopPixel="13906"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="24993" selectionTopPixel="12912"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l1xx_it.c" partName="stm32l1xx_it.c" path="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/stm32l1xx_it.c" title="stm32l1xx_it.c" tooltip="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/stm32l1xx_it.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/platform/stm32l1xx_it.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6193" selectionTopPixel="3748"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7015" selectionTopPixel="4851"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l1xx_it.h" partName="stm32l1xx_it.h" path="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/stm32l1xx_it.h" title="stm32l1xx_it.h" tooltip="C:/Users/Utlisateur/Documents/GitHub/DecawaveEnhencedv5/src/platform/stm32l1xx_it.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Projet_Sur_Nucleo2/src/platform/stm32l1xx_it.h"/>
@@ -153,13 +153,8 @@
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.coocox.component.ui.view.ComponentView"/>
-<fastViewBars>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@a2427b" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
-<fastViews>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-</fastViewBars>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@81442a">
@@ -193,12 +188,14 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.2385148" ratioLeft="379" ratioRight="1210" relationship="2" relative="org.eclipse.ui.internal.ViewStack@81442a"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@a2427b" ratio="0.8409279" ratioLeft="1015" ratioRight="192" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@a2427b" ratio="0.7930583" ratioLeft="1211" ratioRight="316" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </mainWindow>
@@ -308,6 +305,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/platform/stm32l1xx_it.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/platform/stm32l1xx_it.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/platform/stm32l1xx_it.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/application/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/platform/port.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Projet_Sur_Nucleo2/src/platform/port.h"/>
 </editors>
 <item historyLabel="instance.h" index="0">
 <position info="not_deleted" x="0" y="0"/>
@@ -324,8 +324,26 @@
 <item historyLabel="stm32l1xx_it.h" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="stm32l1xx_it.c" index="5">
+<item historyLabel="stm32l1xx_it.c" index="5">
 <position info="not_deleted" x="6884" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="18512" y="0"/>
+</item>
+<item historyLabel="port.c" index="7">
+<position info="not_deleted" x="25871" y="0"/>
+</item>
+<item historyLabel="port.c" index="7">
+<position info="not_deleted" x="1431" y="17"/>
+</item>
+<item historyLabel="port.h" index="8">
+<position info="not_deleted" x="1703" y="0"/>
+</item>
+<item active="true" historyLabel="stm32l1xx_it.c" index="5">
+<position info="not_deleted" x="7015" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -334,15 +352,8 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l1xx_gpio.c" tooltip="Projet_Sur_Nucleo2/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c">
+<persistable path="/Projet_Sur_Nucleo2/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l1xx.h" tooltip="Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/stm32l1xx.h">
 <persistable path="/Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/stm32l1xx.h"/>
@@ -379,6 +390,9 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l1xx.h" tooltip="Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/stm32l1xx.h">
 <persistable path="/Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/stm32l1xx.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32l1xx_mdp.s" tooltip="Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/startup/startup_stm32l1xx_mdp.s">
+<persistable path="/Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/startup/startup_stm32l1xx_mdp.s"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32l1xx_mdp.s" tooltip="Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/startup/startup_stm32l1xx_mdp.s">
 <persistable path="/Projet_Sur_Nucleo2/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32L1xx/startup/startup_stm32l1xx_mdp.s"/>
