@@ -57,6 +57,9 @@ int chan, tagaddr, ancaddr;
 uint8 dataseq[LCD_BUFF_LEN];
 uint8 dataseq1[LCD_BUFF_LEN];
 
+#define PULSE_1 20 //Durée du pulse en ms
+#define PULSE_2 100 //Durée du pulse en ms
+
 int ranging = 0;
 double max_range = 0;
 int n = 1000; // Number defined to read the analog value after N cycles.
@@ -679,37 +682,42 @@ int main(void)
 			//Dipswitch1 on, toggle mode
 			if(GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN))
 			{
-				GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET); // Door opened in this case
+				GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_SET); // Door opened in this case
+				Sleep(1000);
 			}
 
 			//dipswitch1 off, dipswitch2 on, pulse of 0,05s every 0,5s
 			else if(!GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN) && GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH2_GPIO_PIN))
 			{
-				p--;
+				/*p--;
 				if(p <= 100)
-				{
-					GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
-				}
+				{*/
+					GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_SET);
+					Sleep(PULSE_2);
+				/*}
 				if(p == 0)
-				{
-					GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
-					p = 1000;
-				}
+				{*/
+					GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_RESET);
+					Sleep(1000-PULSE_2);
+					/*p = 1000;
+				}*/
 			}
 
 			//dipswitch1 off, dipswitch2 off, pulse of 0,05s every 2s
 			else if(!GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH1_GPIO_PIN) && GPIO_ReadInputDataBit(DIPSWITCH_GPIO, DIPSWITCH2_GPIO_PIN))
 			{
-				p--;
+				/*p--;
 				if(p <= 100)
-				{
-					GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_SET);
-				}
+				{*/
+					GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_SET);
+					Sleep(1000-PULSE_1);
+				/*}
 				if(p == 0)
-				{
-					GPIO_WriteBit(GPIOB, GPIO_Pin_8, Bit_RESET);
-					p = 4000;
-				}
+				{*/
+					GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_RESET);
+					Sleep(1000-PULSE_1);
+					/*p = 4000;
+				}*/
 			}
 		}
 
