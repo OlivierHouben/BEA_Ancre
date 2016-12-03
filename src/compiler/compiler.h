@@ -81,7 +81,7 @@ extern "C" {
 
 /* Redefine CLOCKS_PER_SEC to make it work with Sleep(1) */
 #undef CLOCKS_PER_SEC
-#define CLOCKS_PER_SEC      1000
+#define CLOCKS_PER_SEC      100000
 
 
 #ifdef __cplusplus

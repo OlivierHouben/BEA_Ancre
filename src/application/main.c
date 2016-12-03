@@ -516,6 +516,15 @@ int main(void)
 	uint8 dataseq[LCD_BUFF_LEN];
 
     initLCD();
+    Sleep(1000);
+    memset(dataseq, 0, LCD_BUFF_LEN);
+        memcpy(dataseq, (const uint8 *) "Test1", 16);
+        LCD_GLASS_DisplayString(dataseq);
+    Sleep(1000);
+    memcpy(dataseq, (const uint8 *) "Test2", 16);
+            LCD_GLASS_DisplayString(dataseq);
+            Sleep(1000);
+
 
     /*testAF1= GPIOA->AFR[0];
     testAF2= GPIOA->AFR[1];
