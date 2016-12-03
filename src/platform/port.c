@@ -257,7 +257,7 @@ int RCC_Configuration(void)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
 
 	/* Enable GPIOs clocks */
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD |RCC_AHBPeriph_GPIOE, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD, ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_COMP | RCC_APB1Periph_LCD | RCC_APB1Periph_PWR,ENABLE);
 
@@ -513,7 +513,7 @@ int GPIO_Configuration(void)
 	//GPIO_Init(GPIOD, &GPIO_InitStructure);
 
 	//GPIO_Init(GPIOE, &GPIO_InitStructure);
-
+/*
 	// bouton utilisateur discovery PA0
 	GPIO_InitStructure.GPIO_Pin = TAG_RESET_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
@@ -549,7 +549,7 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Pin = DIPSWITCH1_GPIO_PIN | DIPSWITCH2_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(DIPSWITCH_GPIO, &GPIO_InitStructure);
+	GPIO_Init(DIPSWITCH_GPIO, &GPIO_InitStructure); */
 
 	// Disable GPIOs clocks
 	//RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD | RCC_AHBPeriph_GPIOE, DISABLE);
@@ -956,7 +956,7 @@ int is_IRQ_enabled(void)
 
 int peripherals_init (void)
 {
-	 // tag=1 anchre =0
+
 
 	rcc_init();
 	rtc_init();

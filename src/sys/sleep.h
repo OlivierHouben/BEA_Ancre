@@ -31,8 +31,8 @@ struct tms {
 };
 #endif
 
-extern unsigned __weak sleep(unsigned seconds);
-extern int __weak usleep(useconds_t useconds);
+extern unsigned sleep(unsigned seconds);
+extern int usleep(useconds_t useconds);
 
 #ifdef __cplusplus
 }
