@@ -45,7 +45,7 @@ int instance_anchaddr = 0; //0 = 0xDECA020000000001; 1 = 0xDECA020000000002; 2 =
 //NOTE: switches TA_SW1_7 and TA_SW1_8 are used to set tag/anchor address
 int dr_mode = 0;
 //if instance_mode = TAG_TDOA then the device cannot be selected as anchor
-int instance_mode = TAG;
+int instance_mode = ANCHOR;
 //int instance_mode = TAG;
 //int instance_mode = TAG_TDOA;
 //int instance_mode = LISTENER;
@@ -794,14 +794,13 @@ int main(void)
     			}
         	}
     	}
-<<<<<<< HEAD
+
 */
 
 
-}
-=======
-    }
->>>>>>> origin/master
-    return 0;
-}
 
+
+    }
+
+    return 0;
+    }
