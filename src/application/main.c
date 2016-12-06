@@ -592,9 +592,9 @@ int main(void)
 
 	instance_mode = ANCHOR;
 
-	memcpy(&dataseq[2], (const uint8 *) "  AWAITING  ", 12);
+	memcpy(&dataseq[2], (const uint8 *) "AWAITING", 12);
 	LCD_GLASS_DisplayString(dataseq); //send some data
-	memcpy(&dataseq[2], (const uint8 *) "    POLL    ", 12);
+	memcpy(&dataseq[2], (const uint8 *) "POLL", 12);
 	LCD_GLASS_DisplayString(dataseq); //send some data
 
 	LCD_GLASS_Clear();//writetoLCD( 1, 0,  &command);
@@ -730,6 +730,9 @@ int main(void)
 		led_on(LED_PB7); // Red LED means that the anchor is not linked with any tag
 		led_off(LED_PB6);
 		GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_RESET); // Door closed in this case
+		memcpy(&dataseq[0], (const uint8 *) "NOPE", 16);
+		LCD_GLASS_DisplayString(dataseq); //send some data
+		Sleep(100);
 
 		if(instanceanchorwaiting())
 		{

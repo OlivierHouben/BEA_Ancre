@@ -20,6 +20,9 @@
 
 #include "instance.h"
 
+#define LCD_BUFF_LEN 100
+extern uint8 dataseq[LCD_BUFF_LEN];
+
 // -------------------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -624,7 +627,9 @@ int testapprun_s(instance_data_t *inst, int message)
 
 
         case TA_RXE_WAIT :
-        // printf("TA_RXE_WAIT") ;
+    		memcpy(&dataseq[0], (const uint8 *) "RXW", 16);
+    		LCD_GLASS_DisplayString(dataseq);
+    		Sleep(200);
         {
 
             if(inst->wait4ack == 0) //if this is set the RX will turn on automatically after TX
@@ -650,8 +655,9 @@ int testapprun_s(instance_data_t *inst, int message)
         }
 
         case TA_RX_WAIT_DATA :                                                                     // Wait RX data
-		   //printf("TA_RX_WAIT_DATA %d", message) ;
-
+    		memcpy(&dataseq[0], (const uint8 *) "RXWD", 16);
+    		LCD_GLASS_DisplayString(dataseq);
+    		Sleep(200);
             switch (message)
             {
                 case SIG_RX_BLINK :
