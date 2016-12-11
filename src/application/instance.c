@@ -15,6 +15,10 @@
 #include "deca_device_api.h"
 #include "deca_spi.h"
 #include "deca_regs.h"
+#include "stdio.h"
+#include "stm32l_discovery_lcd.h"
+#include "discover_board.h"
+#include "stm32l1xx_lcd.h"
 
 #include "lib.h"
 

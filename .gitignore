@@ -51,3 +51,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+*.o
+*.o
+*.xml
+*.hex
+*.xml
+*.elf
+*.bin

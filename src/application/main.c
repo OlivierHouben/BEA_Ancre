@@ -499,7 +499,6 @@ int main(void)
     int toggle = 1;
     double range_result = 0;
     double avg_result = 0;
-     // 1tag  0 anchor
 
     led_off(LED_ALL); //turn off all the LEDs
 
@@ -507,32 +506,10 @@ int main(void)
 
     spi_peripheral_init();
 
-    //tests oli
-    /*int testAF1= GPIOA->AFR[0];
-    int testAF2=GPIOA->AFR[1];
-	int testMODE=GPIOA->MODER;
-    int testOUT=GPIOA->OTYPER;
-    InitializeTimer();*/
-
-//  Sleep(1000); //wait for LCD to power on
-
 	uint8 dataseq[LCD_BUFF_LEN];
 
     initLCD();
     Sleep(1000);
-    memset(dataseq, 0, LCD_BUFF_LEN);
-        memcpy(dataseq, (const uint8 *) "Test1", 16);
-        LCD_GLASS_DisplayString(dataseq);
-    Sleep(1000);
-    memcpy(dataseq, (const uint8 *) "Test2", 16);
-            LCD_GLASS_DisplayString(dataseq);
-            Sleep(1000);
-
-
-    /*testAF1= GPIOA->AFR[0];
-    testAF2= GPIOA->AFR[1];
-    testMODE=GPIOA->MODER;
-    testOUT=GPIOA->OTYPER;*/
 
     memset(dataseq, 0, LCD_BUFF_LEN);
     memcpy(dataseq, (const uint8 *) "DECAWAVE        ", 16);
@@ -540,7 +517,7 @@ int main(void)
     memcpy(dataseq, (const uint8 *) SOFTWARE_VER_STRING, 16); // Also set at line #26 (Should make this from single value !!!)
     //send some data
 
-    // Sleep(1000);
+    Sleep(1000);
 
     s1switch = 40; //code anchor mode 3 par défaut
     //s1switch = 32; //code tag mode 3 par défaut
@@ -727,17 +704,26 @@ int main(void)
 
 	if(ranging == 0)
 	{
-		led_on(LED_PB7); // Red LED means that the anchor is not linked with any tag
-		led_off(LED_PB6);
-		GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_RESET); // Door closed in this case
+		if(GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_7))
+		{
+			led_on(LED_PB6); // Red LED means that the anchor is not linked with any tag
+			led_off(LED_PB7);
+		}
+		else
+		{
+			led_on(LED_PB7); // Red LED means that the anchor is not linked with any tag
+			led_off(LED_PB6);
+		}
+		/*GPIO_WriteBit(DOOR_GPIO, DOOR_GPIO_PIN, Bit_RESET); // Door closed in this case
 		memcpy(&dataseq[0], (const uint8 *) "NOPE", 16);
-		LCD_GLASS_DisplayString(dataseq); //send some data
+		LCD_GLASS_DisplayString(dataseq); //send some data*/
+
 		Sleep(100);
 
 		if(instanceanchorwaiting())
 		{
 			toggle+=2;
-
+/*
 			if(toggle > 300000)
 			{
 				dataseq[0] = 0x2 ;  //return cursor home
@@ -758,7 +744,7 @@ int main(void)
 					sprintf((char*)&dataseq[0], "%llX", instance_get_addr());
 					LCD_GLASS_DisplayString(dataseq); //send some data
 				}
-			}
+			}*/
 		}
 		else if(instanceanchorwaiting() == 2)
 		{

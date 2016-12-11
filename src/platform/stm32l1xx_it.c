@@ -210,8 +210,6 @@ void RTC_IRQHandler(void)
 	  {
 	    RTC_ClearITPendingBit(RTC_IT_WUT);
 	    EXTI_ClearITPendingBit(EXTI_Line20); // And EXTI
-
-	    // code a mettre pour l'interuption RTC
 	  }
 }
 
@@ -222,13 +220,6 @@ void SysTick_Handler(void)
 	fsd_service();
 #endif
 }
-
-/*void EXTI15_10_IRQHandler(void)
-{
-	//button_callback();
-	//Clear EXTI Line 13 Pending Bit
-	EXTI_ClearITPendingBit(EXTI_Line13);
-}*/
 
 /******************************************************************************/
 /*                 STM32L1xx Peripherals Interrupt Handlers                   */
@@ -245,7 +236,7 @@ void SysTick_Handler(void)
 void EXTI15_10_IRQHandler(void)
 {
 	process_dwRSTn_irq();
-    /* Clear EXTI Line 0 Pending Bit */
+    /* Clear EXTI Line 13 Pending Bit */
     EXTI_ClearITPendingBit(DECARSTIRQ_EXTI);
 }
 

@@ -518,7 +518,7 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Pin = TAG_RESET_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
-	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);
+	GPIO_Init(TAG_RESET_GPIO, &GPIO_InitStructure);*/
 
 	// Enable GPIO used for LEDs
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
@@ -526,7 +526,7 @@ int GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-	// Enable GPIO used to command the relay, commanding the door PB8
+	/*// Enable GPIO used to command the relay, commanding the door PB8
 	GPIO_InitStructure.GPIO_Pin = DOOR_GPIO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
